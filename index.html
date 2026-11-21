@@ -3,27 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tanisha Shinde – Creative portfolio</title>
-<meta name="description" content="Brand, content and video work by Your Name.">
+<title>Tanisha Shinde – UX &amp; Interaction Design Portfolio</title>
+<meta name="description" content="Portfolio of Tanisha Shinde: explorations in UX and interaction design, where human behaviour, technology and design meet.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#F1F3F8; --ink:#14161F; --muted:#5B6072; --line:#D5D9E4;
-  --cobalt:#2A3AFF; --on-cobalt:#fff;
+  --paper:#E2DDE3; --ink:#0F0406; --muted:#462831; --line:#CBC3CE;
+  --accent:#7E5758; --on-accent:#E2DDE3;
+  --mauve:#95929C;
   --display:"Bricolage Grotesque",system-ui,sans-serif;
   --body:"Figtree",system-ui,sans-serif;
   box-sizing:border-box;
 }
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){--paper:#10121A;--ink:#EDEFF6;--muted:#9AA0B5;--line:#262A3A;--cobalt:#7C88FF;--on-cobalt:#10121A}
+  :root:not([data-theme="light"]){--paper:#0F0406;--ink:#E2DDE3;--muted:#B5AEB8;--line:#462831;--accent:#95929C;--on-accent:#0F0406;--mauve:#7E5758}
 }
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
 
 /* nav */
@@ -35,13 +37,13 @@ nav a:hover{color:var(--ink)}
 /* hero: the one memorable thing – huge type that thickens on hover */
 .hero{padding:clamp(3rem,10vw,8rem) 0 clamp(3rem,8vw,6rem)}
 .hero h1{
-  margin:0;font:300 clamp(3.5rem,15vw,12rem)/.9 var(--display);letter-spacing:-.04em;
+  margin:0;font:300 clamp(2.75rem,10vw,8rem)/.9 var(--display);letter-spacing:-.04em;
   font-variation-settings:"opsz" 96;
 }
 .hero h1 span{display:inline-block;transition:font-weight .35s ease}
 .hero h1 span:hover{font-weight:800}
 .hero p{max-width:34rem;margin:2rem 0 0;font-size:1.25rem}
-.cta{display:inline-block;margin-top:2rem;padding:.85rem 1.5rem;border-radius:999px;background:var(--cobalt);color:var(--on-cobalt);font-weight:600;text-decoration:none}
+.cta{display:inline-block;margin-top:2rem;padding:.85rem 1.5rem;border-radius:999px;background:var(--accent);color:var(--on-accent);font-weight:600;text-decoration:none}
 .cta:hover{filter:brightness(1.1)}
 .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
 .actions .cta{margin-top:0}
@@ -50,7 +52,7 @@ nav a:hover{color:var(--ink)}
 .detail dd{margin:0}
 
 section{padding:clamp(2.5rem,6vw,5rem) 0;border-top:1px solid var(--line)}
-h2{margin:0 0 2rem;font:600 clamp(1.75rem,4vw,2.75rem)/1.1 var(--display);letter-spacing:-.02em}
+h2{margin:0 0 1.5rem;font:400 clamp(4rem,11vw,7.5rem)/1 "Mrs Saint Delafield",cursive;letter-spacing:0}
 
 /* work: expandable rows */
 details{border-bottom:1px solid var(--line)}
@@ -58,12 +60,12 @@ summary{display:flex;justify-content:space-between;gap:1rem;align-items:baseline
 summary::-webkit-details-marker{display:none}
 summary .name{font:600 clamp(1.4rem,3.5vw,2.25rem) var(--display);letter-spacing:-.02em}
 summary .tag{color:var(--muted);font-size:.95rem;text-align:right}
-summary:hover .name{color:var(--cobalt)}
-details[open] summary .name{color:var(--cobalt)}
+summary:hover .name{color:var(--accent)}
+details[open] summary .name{color:var(--accent)}
 .detail{display:grid;gap:1rem;padding:0 0 1.75rem;max-width:42rem}
 .detail p{margin:0}
-.detail a{color:var(--cobalt);font-weight:600}
-.thumb{aspect-ratio:16/9;border-radius:.5rem;background:var(--line);display:grid;place-items:center;color:var(--muted);font-size:.9rem}
+.detail a{color:var(--accent);font-weight:600}
+.thumb{aspect-ratio:16/9;border-radius:.5rem;background:color-mix(in srgb,var(--mauve) 35%,var(--paper));display:grid;place-items:center;color:var(--muted);font-size:.9rem}
 /* Replace .thumb with: <img src="images/yourfile.jpg" alt="Describe it"> or a <video controls src="..."> */
 
 /* about + timeline */
@@ -72,34 +74,48 @@ details[open] summary .name{color:var(--cobalt)}
 .cols p{margin:0 0 1rem;max-width:34rem}
 .timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
 .timeline li{position:relative;padding:0 0 1.5rem 1.5rem}
-.timeline li::before{content:"";position:absolute;left:-7px;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--cobalt)}
+.timeline li::before{content:"";position:absolute;left:-7px;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--mauve)}
 .timeline b{display:block;font:600 1.1rem var(--display)}
 .timeline small{color:var(--muted)}
 
 .skills{display:flex;flex-wrap:wrap;gap:.6rem;padding:0;margin:0;list-style:none}
-.skills li{padding:.4rem 1rem;border:1px solid var(--line);border-radius:999px}
+.skills li{padding:.4rem 1rem;border:1px solid var(--mauve);border-radius:999px}
 
 footer{padding:2rem 0 3rem;color:var(--muted);border-top:1px solid var(--line)}
 .contact a.big{display:block;font:600 clamp(1.5rem,5vw,3.5rem)/1.1 var(--display);letter-spacing:-.03em;text-decoration:none;word-break:break-word}
-.contact a.big:hover{color:var(--cobalt)}
+.contact a.big:hover{color:var(--accent)}
 .social{display:flex;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap}
 
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero h1 span{transition:none}}
 
 .detail h3{margin:0;font:600 .95rem var(--display);color:var(--muted)}
 .links{display:flex;flex-wrap:wrap;gap:.75rem}
-.links a{padding:.55rem 1.1rem;border-radius:999px;background:var(--cobalt);color:var(--on-cobalt);text-decoration:none;font-weight:600}
+.links a{padding:.55rem 1.1rem;border-radius:999px;background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:600}
 .links a.alt{background:none;color:var(--ink);border:1px solid var(--line)}
 .links a:hover{filter:brightness(1.1)}
 .cta.ghost{margin-left:.75rem;background:none;color:var(--ink);border:1px solid var(--ink)}
 .edu b{font:600 1.15rem var(--display)}
 .edu p{margin:.25rem 0 1rem}
+.hero p.sub{font-size:1.05rem;color:var(--muted);margin-top:1rem}
+
+.about-top{display:grid;gap:2rem;grid-template-columns:1fr}
+.script{margin:0;white-space:nowrap}
+.caps{font-size:inherit;font-weight:400;line-height:inherit;letter-spacing:normal;text-transform:none;text-align:left}
+.about-top .caps p{margin:0 0 1.25rem}
+.about-top .caps{max-width:34rem}
+.about-bottom{display:grid;gap:2.5rem;grid-template-columns:1fr;margin-top:3rem}
+.about-bottom h3{margin:0 0 .75rem;font:600 clamp(1.4rem,3vw,2rem) var(--display);letter-spacing:-.02em;text-transform:none}
+.about-bottom .caps{margin:0;max-width:26rem}
+@media(min-width:48rem){
+  .about-top{grid-template-columns:1fr 1.2fr;align-items:start}
+  .about-bottom{grid-template-columns:1fr 1fr}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <a class="logo" href="#top">YN.</a>
+    <a class="logo" href="#top">TS.</a>
     <nav>
       <a href="#work">Work</a>
       <a href="#about">About</a>
@@ -111,8 +127,9 @@ footer{padding:2rem 0 3rem;color:var(--muted);border-top:1px solid var(--line)}
   <main id="top">
     <!-- EDIT: your name and one-line pitch -->
     <div class="hero">
-      <h1 aria-label="Your Name"><span>Y</span><span>o</span><span>u</span><span>r</span> <span>N</span><span>a</span><span>m</span><span>e</span></h1>
-      <p>I want to study [your program] because I love turning ideas into video, design and brand work. Here is what I have made so far.</p>
+      <h1 aria-label="Tanisha Shinde"><span>T</span><span>a</span><span>n</span><span>i</span><span>s</span><span>h</span><span>a</span> <span>S</span><span>h</span><span>i</span><span>n</span><span>d</span><span>e</span></h1>
+      <p>Welcome to my portfolio! A collection of my explorations, ideas, and ongoing journey into UX and interaction design.</p>
+      <p class="sub">I’m drawn to the little things that shape how we experience the world: how people think, what influences their decisions, and how the things we interact with every day make us feel.</p>
       <div class="actions">
         <a class="cta" href="#work">See my work</a><a class="cta ghost" href="resume.pdf" download>Download resume</a>
       </div>
@@ -120,9 +137,20 @@ footer{padding:2rem 0 3rem;color:var(--muted);border-top:1px solid var(--line)}
 
     <!-- EDIT: one <details> per project. Click a row to expand it. -->
     <section id="work">
-      <h2>Selected work</h2>
+      <h2>Selected Work</h2>
       <details open>
-        <summary><span class="name">Brand One</span><span class="tag">Social media, 2024</span></summary>
+        <summary><span class="name">Project One</span><span class="tag">ScholarPath, 2026</span></summary>
+        <div class="detail">
+          <div class="thumb">Add an image or video here</div>
+          <p>A university application management platform that helps students keep track of deadlines, requirements, documents, and application progress, all in one place.</p>
+          <div class="links">
+            <!-- EDIT: paste your Canva share link or PDF path (e.g. case-studies/brand-one.pdf) -->
+            <a href="https://www.canva.com/design/YOUR-LINK/view" target="_blank" rel="noopener">Know more</a>
+          </div>
+        </div>
+      </details>
+      <details>
+        <summary><span class="name">Project Two</span><span class="tag">Video editing, 2025</span></summary>
         <div class="detail">
           <div class="thumb">Add an image or video here</div>
           <p>Write your own text here.</p>
@@ -133,18 +161,7 @@ footer{padding:2rem 0 3rem;color:var(--muted);border-top:1px solid var(--line)}
         </div>
       </details>
       <details>
-        <summary><span class="name">Brand Two</span><span class="tag">Video editing, 2025</span></summary>
-        <div class="detail">
-          <div class="thumb">Add an image or video here</div>
-          <p>Write your own text here.</p>
-          <div class="links">
-            <!-- EDIT: paste your Canva share link or PDF path (e.g. case-studies/brand-one.pdf) -->
-            <a href="https://www.canva.com/design/YOUR-LINK/view" target="_blank" rel="noopener">Know more</a>
-          </div>
-        </div>
-      </details>
-      <details>
-        <summary><span class="name">Brand Three</span><span class="tag">Brand identity, 2026</span></summary>
+        <summary><span class="name">Project Three</span><span class="tag">Brand identity, 2026</span></summary>
         <div class="detail">
           <div class="thumb">Add an image or video here</div>
           <p>Write your own text here.</p>
@@ -157,18 +174,36 @@ footer{padding:2rem 0 3rem;color:var(--muted);border-top:1px solid var(--line)}
     </section>
 
     <section id="about">
+      <div class="about-top">
+        <h2 class="script">About Me</h2>
+        <div class="caps">
+          <p>I’m a Computer Applications student with a growing interest in UX design and the ways technology shapes our everyday experiences. I’m curious about people: how they think, what influences their decisions, and how small details can change the way they interact with the world around them.</p>
+          <p>Outside academics, I’m drawn to films, storytelling, photography, and the psychology behind characters and their choices. These interests constantly influence how I observe the world, interpret experiences, and approach creative ideas.</p>
+          <p>I’m currently exploring the intersection of human behaviour, research, and interaction design, with the goal of creating digital experiences that are thoughtful, intuitive, and accessible.</p>
+        </div>
+      </div>
+      <div class="about-bottom">
+        <div>
+          <h3>Signature style</h3>
+          <p class="caps">My approach to design is guided by curiosity, thoughtful composition, and attention to detail. I enjoy balancing visual expression with clarity, creating work that feels intentional while remaining functional and true to its purpose.</p>
+        </div>
+        <div>
+          <h3>Inspiration</h3>
+          <p class="caps">I find inspiration in films, photography, storytelling, and the psychology behind human behaviour. I’m drawn to the subtle details that shape how people think, feel, and experience the world, and I use these observations to inform my creative perspective.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
       <div class="cols">
         <div>
-          <h2>About</h2>
-          <p>Write two or three short paragraphs: who you are, what you do best, and what you want to study and why.</p>
-          <p>Mention what first got you interested in this field and what you hope to build next.</p>
-          <h2 style="margin-top:2.5rem">Skills</h2>
+          <h2>Skills</h2>
           <ul class="skills">
             <li>Video editing</li><li>Graphic design</li><li>Content strategy</li><li>SEO</li><li>Project management</li>
           </ul>
         </div>
         <div>
-          <h2>Experience and projects</h2>
+          <h2>Experience and Projects</h2>
           <ol class="timeline">
             <li><b>Role, Company</b><small>2025 to now</small></li>
             <li><b>Role, Company</b><small>2024 to 2025</small></li>
