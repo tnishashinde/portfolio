@@ -221,7 +221,7 @@ body:has(dialog[open]){overflow:hidden}
         <summary><span class="name">Project Two</span><span class="tag">Couture Connect, 2024 – 2025</span></summary>
         <div class="detail">
           <div class="thumb">Add an image or video here</div>
-          <p>Built a clothing rental website with a team of three, connecting students who want to rent or lend clothes. I designed the frontend and the user flows, from the landing page to the upload, browsing, and rental screens. I also integrated a machine learning model that suggests a category when a student uploads a photo, which makes listing items quicker.</p>
+          <p>A clothing rental website designed for students who want to rent or lend clothes. It brings the whole experience together, from a landing page that introduces the idea to screens for uploading items, browsing listings, and renting. To make listing quicker, an integrated machine learning model suggests a category when a student uploads a photo of their item.</p>
           <div class="links">
             <button type="button" class="know" data-dialog="case-2">Know more</button>
           </div>
@@ -392,12 +392,12 @@ body:has(dialog[open]){overflow:hidden}
     <button type="button" class="close" aria-label="Close">Close ✕</button>
     <p class="tag">2024 – 2025</p>
     <h2 class="case-title" id="case-2-title">Couture Connect</h2>
-    <p class="lead">Built a clothing rental website with a team of three, connecting students who want to rent or lend clothes. I designed the frontend and the user flows, from the landing page to the upload, browsing, and rental screens. I also integrated a machine learning model that suggests a category when a student uploads a photo, which makes listing items quicker.</p>
+    <p class="lead">A clothing rental website designed for students who want to rent or lend clothes. It brings the whole experience together, from a landing page that introduces the idea to screens for uploading items, browsing listings, and renting. To make listing quicker, an integrated machine learning model suggests a category when a student uploads a photo of their item.</p>
     <dl class="facts">
-      <div><dt>Role</dt><dd>Add your role</dd></div>
+      <div><dt>Role</dt><dd>UX Design, Frontend Design, User Flow Design, ML Model Integration</dd></div>
       <div><dt>Timeline</dt><dd>2024 – 2025</dd></div>
       <div><dt>Tools</dt><dd>Add tools used</dd></div>
-      <div><dt>Team</dt><dd>Add team size</dd></div>
+      <div><dt>Team size</dt><dd>3</dd></div>
     </dl>
     <div class="thumb big">Cover image or video</div>
     <h3>Overview</h3>
@@ -405,6 +405,19 @@ body:has(dialog[open]){overflow:hidden}
     <h3>Process</h3>
     <div class="thumb">Replace with an image: &lt;img src="images/your-file.jpg" alt="Describe it"&gt;</div>
     <p>Write your text here.</p>
+    <h3 id="cc-final">Final Design</h3>
+    <div class="gallery">
+      <img loading="lazy" decoding="async" src="images/cc%20images/CC%20Home%20Page.png" alt="Couture Connect landing page">
+      <img loading="lazy" decoding="async" src="images/cc%20images/CC%20Upload%20Page.png" alt="Couture Connect upload page">
+      <img loading="lazy" decoding="async" src="images/cc%20images/CC%20View%20Page.png" alt="Couture Connect view page with category suggestions">
+      <!-- Clickable screen: the pulsing hotspot sits over the Classify button and opens the result screen (dialog id="screen-classify" near the end of this file). -->
+      <figure class="shot">
+        <img loading="lazy" decoding="async" src="images/cc%20images/CC%20Pre%20Classify%20Page.png" alt="Couture Connect classify page before classifying">
+        <button type="button" class="hotspot" data-screen="screen-classify" aria-label="Open the classification result screen" style="left:31.6%;top:65.9%;width:36.8%;height:6.3%"><span class="tip" aria-hidden="true">Click to explore</span></button>
+        <button type="button" class="enlarge">⤢ Enlarge</button>
+      </figure>
+    </div>
+
     <h3>Outcome</h3>
     <p>Write your text here.</p>
   </div>
@@ -451,6 +464,10 @@ body:has(dialog[open]){overflow:hidden}
 <dialog class="screen" id="screen-checklist" aria-label="Document Checklist screen">
   <div class="bar"><span>Document Checklist</span><button type="button" class="x" data-close>Close ✕</button></div>
   <img loading="lazy" decoding="async" src="images/Document%20Checklist.jpg" alt="ScholarPath document checklist screen">
+</dialog>
+<dialog class="screen" id="screen-classify" aria-label="Classification result screen">
+  <div class="bar"><span>Classification result</span><button type="button" class="x" data-close>Close ✕</button></div>
+  <img loading="lazy" decoding="async" src="images/cc%20images/CC%20Post%20Classify%20Page.png" alt="Couture Connect classify page showing the detected category and confidence">
 </dialog>
 <script>
 document.querySelectorAll('[data-dialog]').forEach(function(b){
