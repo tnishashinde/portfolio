@@ -82,7 +82,7 @@ details[open] summary .name{color:var(--accent)}
 .skills li{padding:.4rem 1rem;border:1px solid var(--mauve);border-radius:999px}
 
 footer{padding:2rem 0 3rem;color:var(--muted);border-top:1px solid var(--line)}
-.contact a.big{display:block;font:600 clamp(1.5rem,5vw,3.5rem)/1.1 var(--display);letter-spacing:-.03em;text-decoration:none;word-break:break-word}
+.contact a.big{display:block;font:600 clamp(1.15rem,3vw,2rem)/1.2 var(--display);letter-spacing:-.02em;text-decoration:none;word-break:break-word}
 .contact a.big:hover{color:var(--accent)}
 .social{display:flex;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap}
 
@@ -110,6 +110,74 @@ footer{padding:2rem 0 3rem;color:var(--muted);border-top:1px solid var(--line)}
   .about-top{grid-template-columns:1fr 1.2fr;align-items:start}
   .about-bottom{grid-template-columns:1fr 1fr}
 }
+
+.know{font:inherit;font-weight:600;padding:.55rem 1.1rem;border-radius:999px;background:var(--accent);color:var(--on-accent);border:0;cursor:pointer}
+.know:hover{filter:brightness(1.1)}
+dialog.case{width:min(60rem,94vw);max-height:90vh;padding:0;border:0;border-radius:1rem;background:var(--paper);color:var(--ink);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+dialog.case::backdrop{background:rgba(15,4,6,.65)}
+.case-inner{max-height:90vh;overflow-y:auto;padding:0 clamp(1.25rem,4vw,3rem) 3rem;scroll-behavior:smooth}
+.close{position:sticky;top:0;z-index:2;display:block;margin:0 0 0 auto;padding:1rem 0 .5rem;background:var(--paper);border:0;color:var(--ink);font:600 .95rem var(--body);cursor:pointer}
+body:has(dialog[open]){overflow:hidden}
+.case-title{margin:.25rem 0 1rem;font:400 clamp(4rem,11vw,7.5rem)/1 "Mrs Saint Delafield",cursive;letter-spacing:0}
+.case .tag{margin:0;color:var(--muted)}
+.case .lead{font-size:1.2rem;max-width:42rem}
+.case h3{margin:2.5rem 0 .5rem;font:600 clamp(1.4rem,3vw,2rem) var(--display);letter-spacing:-.02em;scroll-margin-top:3.5rem}
+.case p,.case ul,.case ol{max-width:42rem}
+.case .thumb{margin:1.25rem 0}
+.case .thumb.big{aspect-ratio:21/9}
+.case img,.case video{display:block;max-width:100%;height:auto;margin:1.25rem 0;border-radius:.5rem}
+.gallery{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
+.gallery .thumb{margin:0}
+.facts{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));margin:1.5rem 0;padding:1rem 0;border-block:1px solid var(--line)}
+.facts dt{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.facts dd{margin:.15rem 0 0;font-weight:600}
+.jump{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1rem}
+.jump button{font:inherit;font-size:.9rem;padding:.35rem .9rem;border-radius:999px;border:1px solid var(--mauve);background:none;color:var(--ink);cursor:pointer}
+.jump button:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+@media (prefers-reduced-motion:reduce){.case-inner{scroll-behavior:auto}}
+
+.facts dd small{display:block;margin-top:.25rem;font-weight:400;font-size:.85rem;color:var(--muted)}
+.goals{padding-left:1.2rem}
+.goals li{margin-bottom:.6rem}
+.flow-title{margin:0 0 1rem;color:var(--muted);font-size:.9rem}
+.flow-label{margin:1.5rem 0 .75rem;max-width:none;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.flow-row,.flow-down{list-style:none;margin:0;padding:0;display:grid;gap:2.5rem}
+.flow-row.four{grid-template-columns:repeat(4,1fr)}
+.flow-row.three{grid-template-columns:repeat(3,1fr)}
+.flow-down{margin:2.5rem auto 0;width:calc((100% - 5rem)/3)}
+.flow li{position:relative;display:grid;place-items:center;align-content:center;gap:.25rem;min-height:4.25rem;padding:.9rem;border-radius:.75rem;background:var(--ink);color:var(--paper);font-size:.75rem;font-weight:700;letter-spacing:.04em;text-align:center;text-transform:uppercase}
+.flow li small{font-size:.65rem;font-weight:500;opacity:.85}
+.flow li.hl{background:var(--accent);color:var(--on-accent)}
+.flow-row li:not(:last-child)::after{content:"→" / "";position:absolute;right:-1.95rem;top:50%;transform:translateY(-50%);color:var(--ink);font-size:1.4rem;line-height:1}
+.flow-down li::before{content:"↓" / "";position:absolute;left:50%;top:-2.1rem;transform:translateX(-50%);color:var(--ink);font-size:1.4rem;line-height:1}
+@media (max-width:47.99rem){
+  .flow-row.four,.flow-row.three{grid-template-columns:1fr}
+  .flow-down{width:100%;margin-top:2.5rem}
+  .flow-row li:not(:last-child)::after{content:"↓" / "";right:auto;left:50%;top:auto;bottom:-2.1rem;transform:translateX(-50%)}
+}
+
+.gallery img{width:100%;height:auto;margin:0;cursor:zoom-in}
+.lightbox{width:min(96vw,80rem);max-height:94vh;padding:1rem;border:0;border-radius:1rem;background:var(--paper);color:var(--ink)}
+.lightbox::backdrop{background:rgba(15,4,6,.85)}
+.lightbox img{display:block;max-width:100%;max-height:80vh;margin:.5rem auto 0;object-fit:contain;border-radius:.5rem}
+.lb-close{display:block;margin:0 0 0 auto;padding:.25rem 0;background:none;border:0;color:var(--ink);font:600 .95rem var(--body);cursor:pointer}
+
+
+.shot{position:relative;grid-column:1/-1;margin:0;border-radius:.75rem;overflow:hidden;border:1px solid var(--line)}
+.shot img{margin:0}
+.hotspot{position:absolute;border:0;border-radius:.5rem;background:rgba(255,127,190,.12);cursor:pointer;outline:2px solid #ff7fbe;outline-offset:2px;animation:pulse 1.8s ease-out infinite}
+.hotspot:hover,.hotspot:focus-visible{background:rgba(255,127,190,.3)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,127,190,.7)}100%{box-shadow:0 0 0 14px rgba(255,127,190,0)}}
+.tip{position:absolute;right:0;bottom:calc(100% + .7rem);padding:.3rem .7rem;border-radius:999px;background:var(--ink);color:var(--paper);font:600 .8rem var(--body);white-space:nowrap;pointer-events:none}
+.enlarge{position:absolute;top:.6rem;right:.6rem;padding:.35rem .8rem;border:0;border-radius:999px;background:var(--ink);color:var(--paper);font:600 .8rem var(--body);cursor:pointer}
+.screen{width:min(60rem,94vw);padding:0;border:0;border-radius:1rem;background:var(--paper);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.screen::backdrop{background:rgba(15,4,6,.7)}
+.screen .bar{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;font-size:.9rem;color:var(--muted)}
+.screen .x{border:0;background:none;color:var(--ink);font:600 .95rem var(--body);cursor:pointer}
+.screen img{display:block;width:100%;height:auto}
+@media (prefers-reduced-motion:reduce){.hotspot{animation:none}}
+.screen.small{width:min(34rem,92vw)}
+.screen{max-height:92vh;overflow:auto}
 </style>
 </head>
 <body>
@@ -139,24 +207,22 @@ footer{padding:2rem 0 3rem;color:var(--muted);border-top:1px solid var(--line)}
     <section id="work">
       <h2>Selected Work</h2>
       <details open>
-        <summary><span class="name">Project One</span><span class="tag">ScholarPath, 2026</span></summary>
+        <summary><span class="name">Project One</span><span class="tag">ScholarPath, Sep 2026 – Oct 2026</span></summary>
         <div class="detail">
           <div class="thumb">Add an image or video here</div>
           <p>A university application management platform that helps students keep track of deadlines, requirements, documents, and application progress, all in one place.</p>
           <div class="links">
-            <!-- EDIT: paste your Canva share link or PDF path (e.g. case-studies/brand-one.pdf) -->
-            <a href="https://www.canva.com/design/YOUR-LINK/view" target="_blank" rel="noopener">Know more</a>
+            <button type="button" class="know" data-dialog="case-1">Know more</button>
           </div>
         </div>
       </details>
       <details>
-        <summary><span class="name">Project Two</span><span class="tag">Video editing, 2025</span></summary>
+        <summary><span class="name">Project Two</span><span class="tag">Couture Connect, 2024 – 2025</span></summary>
         <div class="detail">
           <div class="thumb">Add an image or video here</div>
-          <p>Write your own text here.</p>
+          <p>Built a clothing rental website with a team of three, connecting students who want to rent or lend clothes. I designed the frontend and the user flows, from the landing page to the upload, browsing, and rental screens. I also integrated a machine learning model that suggests a category when a student uploads a photo, which makes listing items quicker.</p>
           <div class="links">
-            <!-- EDIT: paste your Canva share link or PDF path (e.g. case-studies/brand-one.pdf) -->
-            <a href="https://www.canva.com/design/YOUR-LINK/view" target="_blank" rel="noopener">Know more</a>
+            <button type="button" class="know" data-dialog="case-2">Know more</button>
           </div>
         </div>
       </details>
@@ -166,8 +232,7 @@ footer{padding:2rem 0 3rem;color:var(--muted);border-top:1px solid var(--line)}
           <div class="thumb">Add an image or video here</div>
           <p>Write your own text here.</p>
           <div class="links">
-            <!-- EDIT: paste your Canva share link or PDF path (e.g. case-studies/brand-one.pdf) -->
-            <a href="https://www.canva.com/design/YOUR-LINK/view" target="_blank" rel="noopener">Know more</a>
+            <button type="button" class="know" data-dialog="case-3">Know more</button>
           </div>
         </div>
       </details>
@@ -199,15 +264,14 @@ footer{padding:2rem 0 3rem;color:var(--muted);border-top:1px solid var(--line)}
         <div>
           <h2>Skills</h2>
           <ul class="skills">
-            <li>Video editing</li><li>Graphic design</li><li>Content strategy</li><li>SEO</li><li>Project management</li>
+            <li>Programming &amp; Web Development</li><li>Designing</li><li>Video Editing</li><li>User Research</li><li>Visual Design</li><li>Prototyping</li><li>Frontend Coding</li><li>Content Writing</li><li>Visual Communication</li>
           </ul>
         </div>
         <div>
-          <h2>Experience and Projects</h2>
+          <h2>Experience</h2>
           <ol class="timeline">
-            <li><b>Role, Company</b><small>2025 to now</small></li>
-            <li><b>Role, Company</b><small>2024 to 2025</small></li>
-            <li><b>Role, Company</b><small>2023 to 2024</small></li>
+            <li><b>Computer Application Product Design Intern</b><small>AppCarter Software Pvt. Ltd. · Jun 2026 to Aug 2026</small></li>
+            <li><b>Social Media Design &amp; Visual Content Creator</b><small>Hover Creative Studio · Oct 2026 to Present</small></li>
           </ol>
         </div>
       </div>
@@ -215,24 +279,206 @@ footer{padding:2rem 0 3rem;color:var(--muted);border-top:1px solid var(--line)}
 
     <section id="education" class="edu">
       <h2>Education</h2>
-      <b>School name</b>
-      <p>Years attended. Relevant courses, for example Art, Media Studies, Computer Science.</p>
-      <b>Awards and activities</b>
-      <p>Clubs, competitions, volunteering, certifications.</p>
+      <b>Bachelor of Computer Applications (Honours)</b>
+      <p>MIT World Peace University, Pune, India · 2023 – 2027</p>
+      <b>Higher Secondary Education</b>
+      <p>Shree Haribhau Bhalwantrao Girme Junior College of Arts, Commerce and Science · Passout year: 2023</p>
+      <b>Secondary Education</b>
+      <p>Podar International School, Chinchwad, Pune · Passout year: 2021</p>
     </section>
 
     <section id="contact" class="contact">
       <h2>Contact</h2>
-      <a class="big" href="mailto:you@example.com">you@example.com</a>
+      <a class="big" href="mailto:tnishashinde@gmail.com">tnishashinde@gmail.com</a>
       <div class="social">
-        <a href="https://instagram.com/">Instagram</a>
-        <a href="https://linkedin.com/">LinkedIn</a>
-        <a href="https://x.com/">X</a>
+        <a href="https://www.linkedin.com/in/tanisha-shinde-99727b327?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://substack.com/@nish4wty" target="_blank" rel="noopener">Substack</a>
       </div>
     </section>
   </main>
 
-  <footer>© 2026 Your Name</footer>
+  <footer>© 2026 Tanisha Shinde</footer>
 </div>
+
+<dialog class="case" id="case-1" aria-labelledby="case-1-title">
+  <div class="case-inner">
+    <button type="button" class="close" aria-label="Close">Close ✕</button>
+    <p class="tag">Sep 2026 – Oct 2026</p>
+    <h2 class="case-title" id="case-1-title">ScholarPath</h2>
+    <p class="lead">A university application management platform that helps students keep track of deadlines, requirements, documents, and application progress, all in one place.</p>
+    <dl class="facts">
+      <div><dt>My role</dt><dd>UX/UI Designer<small>Independent project: research, ideation, visual design, prototyping</small></dd></div>
+      <div><dt>Timeline</dt><dd>Sep 2026 – Oct 2026</dd></div>
+      <div><dt>Tools</dt><dd>Figma and Canva</dd></div>
+      <div><dt>Description</dt><dd>EdTech, Case Study, Web App, UI/UX Design</dd></div>
+    </dl>
+    <nav class="jump" aria-label="Jump to section"><button type="button" data-jump="sp-overview">Overview</button><button type="button" data-jump="sp-problem">Problem</button><button type="button" data-jump="sp-goals">Design goals</button><button type="button" data-jump="sp-creative">Creative process</button><button type="button" data-jump="sp-wireframe">Wireframe</button><button type="button" data-jump="sp-final">Final Design</button><button type="button" data-jump="sp-outcome">Outcome</button></nav>
+    <div class="thumb big">Cover image or video</div>
+    <!-- Each section: a heading with an id, then text, images (.thumb placeholders) or lists. Copy a block to add more. -->
+    <h3 id="sp-overview">Overview</h3>
+    <p>ScholarPath is a university application management platform that simplifies a complex process. By consolidating deadlines, required documents, and progress tracking, it gives students a clear, organised path through their applications.</p>
+
+    <h3 id="sp-problem">The Problem</h3>
+    <p>Applying to several universities at once quickly becomes overwhelming. Deadlines, eligibility criteria, documents, and application updates are spread across different websites and platforms, making it hard to keep track of each university’s requirements or to know what deserves attention first.</p>
+    <p>The idea for ScholarPath came from my own experience. While juggling my university application deadlines with other responsibilities, I found it surprisingly difficult to keep everything organised in one place. Talking with friends showed me that many of them were struggling in the same way, which made it clear this was a common problem rather than a personal one.</p>
+    <p>ScholarPath grew out of that realisation. It aims to bring essential application information and tracking tools together on one organised platform, so students can move through the process with more clarity and confidence.</p>
+
+    <h3 id="sp-goals">Design Goals</h3>
+    <ul class="goals">
+      <li><strong>Centralise information:</strong> One dashboard for preferences, deadlines, requirements, and progress.</li>
+      <li><strong>Improve deadline visibility:</strong> Highlight upcoming deadlines and show which applications come first.</li>
+      <li><strong>Simplify documents:</strong> Make university-specific requirements easy to review and preparation easy to track.</li>
+      <li><strong>Keep it intuitive:</strong> Reduce navigation and make current status and next steps obvious.</li>
+    </ul>
+
+    <h3 id="sp-creative">The Creative Process</h3>
+    <p class="flow-title">User flow</p>
+    <div class="flow">
+      <p class="flow-label">Primary user journey</p>
+      <ol class="flow-row four">
+        <li>Sign up / Log in</li>
+        <li>Set up study plan<small>Country · Degree · University</small></li>
+        <li>Add up to 4 universities</li>
+        <li>View application requirements</li>
+      </ol>
+      <p class="flow-label">Choose a next action</p>
+      <ol class="flow-row three">
+        <li>Check deadlines</li>
+        <li>Manage documents</li>
+        <li>Track applications</li>
+      </ol>
+      <ol class="flow-down">
+        <li class="hl">Update application status</li>
+        <li class="hl">Review progress on dashboard</li>
+      </ol>
+    </div>
+
+    <h3 id="sp-wireframe">Wireframe</h3>
+    <!-- Add images: replace a grey box with <img src="images/wireframe-1.png" alt="Describe it">. Clicking an image opens it larger. -->
+    <div class="gallery">
+      <div class="thumb">Image 1</div><div class="thumb">Image 2</div><div class="thumb">Image 3</div>
+    </div>
+
+    <h3 id="sp-final">Final Design</h3>
+    <div class="links">
+      <!-- EDIT: paste your Figma prototype link -->
+      <a href="https://www.figma.com/proto/YOUR-LINK" target="_blank" rel="noopener">Open interactive prototype</a>
+    </div>
+    <!-- Replace each grey box with <img src="images/final-1.png" alt="Describe the screen">. Copy a box to add more. -->
+    <div class="gallery">
+      <img src="images/Login.jpg" alt="ScholarPath login screen"><img src="images/Overview.jpg" alt="ScholarPath overview dashboard"><img src="images/Study%20Plan%20Setup.jpg" alt="ScholarPath study plan setup screen"><!-- Clickable screen. Each pink pulsing button is a hotspot placed over a button in the screenshot. data-screen names the window it opens (see the dialogs near the end of this file).
+           left/top/width/height are percentages of the image, so each hotspot stays on its button at any size. To add another hotspot, copy a <button class="hotspot"> and change its numbers and data-screen. -->
+      <figure class="shot">
+        <img src="images/Application%20Tracker.jpg" alt="ScholarPath application tracker screen">
+        <button type="button" class="hotspot" data-screen="screen-add" aria-label="Open the Add Application screen" style="left:64.3%;top:41.2%;width:11.6%;height:4.6%"><span class="tip" aria-hidden="true">Click to explore</span></button>
+        <button type="button" class="hotspot" data-screen="screen-help" aria-label="Open the Need a hand? help window" style="left:79.9%;top:80%;width:16.1%;height:4.5%"></button>
+        <button type="button" class="enlarge">⤢ Enlarge</button>
+      </figure><figure class="shot">
+        <img src="images/Documents.jpg" alt="ScholarPath documents screen">
+        <button type="button" class="hotspot" data-screen="screen-add-doc" aria-label="Open the Add Document screen" style="left:64.3%;top:41.2%;width:11.6%;height:4.6%"><span class="tip" aria-hidden="true">Click to explore</span></button>
+        <button type="button" class="hotspot" data-screen="screen-checklist" aria-label="Open the Document Checklist screen" style="left:79.6%;top:64.2%;width:9%;height:2.8%"></button>
+        <button type="button" class="hotspot" data-screen="screen-help" aria-label="Open the Need a hand? help window" style="left:79.9%;top:85.8%;width:16.1%;height:4.4%"></button>
+        <button type="button" class="enlarge">⤢ Enlarge</button>
+      </figure>
+    </div>
+
+    <h3 id="sp-outcome">Outcome and Learnings</h3>
+    <p>ScholarPath resulted in a platform that brings university preferences, deadlines, document requirements, and application progress together in one dashboard. Students can see which deadlines are coming up, what still needs to be prepared, and what to do next, without moving between multiple websites. Designing it taught me how much clarity depends on prioritisation: when users are managing many tasks at once, showing the right information at the right time matters more than showing everything. It also showed me the value of designing from a real, shared problem, since my own experience and conversations with friends shaped decisions about what to simplify and what to highlight. Along the way, I learned to reduce unnecessary navigation, structure information around the user’s current status, and balance functionality with simplicity.</p>
+  </div>
+</dialog>
+<dialog class="case" id="case-2" aria-labelledby="case-2-title">
+  <div class="case-inner">
+    <button type="button" class="close" aria-label="Close">Close ✕</button>
+    <p class="tag">2024 – 2025</p>
+    <h2 class="case-title" id="case-2-title">Couture Connect</h2>
+    <p class="lead">Built a clothing rental website with a team of three, connecting students who want to rent or lend clothes. I designed the frontend and the user flows, from the landing page to the upload, browsing, and rental screens. I also integrated a machine learning model that suggests a category when a student uploads a photo, which makes listing items quicker.</p>
+    <dl class="facts">
+      <div><dt>Role</dt><dd>Add your role</dd></div>
+      <div><dt>Timeline</dt><dd>2024 – 2025</dd></div>
+      <div><dt>Tools</dt><dd>Add tools used</dd></div>
+      <div><dt>Team</dt><dd>Add team size</dd></div>
+    </dl>
+    <div class="thumb big">Cover image or video</div>
+    <h3>Overview</h3>
+    <p>Write your text here.</p>
+    <h3>Process</h3>
+    <div class="thumb">Replace with an image: &lt;img src="images/your-file.jpg" alt="Describe it"&gt;</div>
+    <p>Write your text here.</p>
+    <h3>Outcome</h3>
+    <p>Write your text here.</p>
+  </div>
+</dialog>
+<dialog class="case" id="case-3" aria-labelledby="case-3-title">
+  <div class="case-inner">
+    <button type="button" class="close" aria-label="Close">Close ✕</button>
+    <p class="tag">2026</p>
+    <h2 class="case-title" id="case-3-title">Project Three</h2>
+    <p class="lead">Write your own text here.</p>
+    <dl class="facts">
+      <div><dt>Role</dt><dd>Add your role</dd></div>
+      <div><dt>Timeline</dt><dd>Add dates</dd></div>
+      <div><dt>Tools</dt><dd>Add tools used</dd></div>
+      <div><dt>Team</dt><dd>Add team size</dd></div>
+    </dl>
+    <div class="thumb big">Cover image or video</div>
+    <h3>Overview</h3>
+    <p>Write your text here.</p>
+    <h3>Process</h3>
+    <div class="thumb">Replace with an image: &lt;img src="images/your-file.jpg" alt="Describe it"&gt;</div>
+    <p>Write your text here.</p>
+    <h3>Outcome</h3>
+    <p>Write your text here.</p>
+  </div>
+</dialog>
+
+<dialog class="lightbox" id="lightbox" aria-label="Enlarged image">
+  <button type="button" class="lb-close" aria-label="Close enlarged image">Close ✕</button>
+  <img alt="">
+</dialog>
+<dialog class="screen" id="screen-add" aria-label="Add Application screen">
+  <div class="bar"><span>Add Application</span><button type="button" class="x" data-close>Close ✕</button></div>
+  <img src="images/Add%20Application.jpg" alt="ScholarPath add application screen">
+</dialog>
+<dialog class="screen small" id="screen-help" aria-label="Need a hand? screen">
+  <div class="bar"><span>Help window</span><button type="button" class="x" data-close>Close ✕</button></div>
+  <img src="images/Need%20Help.jpg" alt="ScholarPath help window: Need a hand?">
+</dialog>
+<dialog class="screen" id="screen-add-doc" aria-label="Add Document screen">
+  <div class="bar"><span>Add Document</span><button type="button" class="x" data-close>Close ✕</button></div>
+  <img src="images/Add%20Document.jpg" alt="ScholarPath add document screen">
+</dialog>
+<dialog class="screen" id="screen-checklist" aria-label="Document Checklist screen">
+  <div class="bar"><span>Document Checklist</span><button type="button" class="x" data-close>Close ✕</button></div>
+  <img src="images/Document%20Checklist.jpg" alt="ScholarPath document checklist screen">
+</dialog>
+<script>
+document.querySelectorAll('[data-dialog]').forEach(function(b){
+  b.addEventListener('click',function(){document.getElementById(b.dataset.dialog).showModal();});
+});
+document.querySelectorAll('dialog.case').forEach(function(d){
+  d.querySelector('.close').addEventListener('click',function(){d.close();});
+  d.addEventListener('click',function(e){if(e.target===d)d.close();});
+  d.querySelectorAll('[data-jump]').forEach(function(j){
+    j.addEventListener('click',function(){var t=d.querySelector('#'+j.dataset.jump);if(t)t.scrollIntoView({block:'start'});});
+  });
+});
+var lb=document.getElementById('lightbox');
+document.addEventListener('click',function(e){
+  var im=e.target.closest('.gallery img');
+  if(im){var big=lb.querySelector('img');big.src=im.currentSrc||im.src;big.alt=im.alt;lb.showModal();return;}
+  if(e.target===lb)lb.close();
+});
+lb.querySelector('.lb-close').addEventListener('click',function(){lb.close();});
+document.addEventListener('click',function(e){
+  var h=e.target.closest('[data-screen]');
+  if(h){document.getElementById(h.dataset.screen).showModal();return;}
+  var en=e.target.closest('.enlarge');
+  if(en){var im=en.closest('.shot').querySelector('img'),big=lb.querySelector('img');big.src=im.currentSrc||im.src;big.alt=im.alt;lb.showModal();}
+});
+document.querySelectorAll('dialog.screen').forEach(function(d){
+  d.querySelector('[data-close]').addEventListener('click',function(){d.close();});
+  d.addEventListener('click',function(e){if(e.target===d)d.close();});
+});
+</script>
 </body>
 </html>
