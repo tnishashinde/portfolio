@@ -66,7 +66,7 @@ details[open] summary .name{color:var(--accent)}
 .detail p{margin:0}
 .detail a{color:var(--accent);font-weight:600}
 .thumb{aspect-ratio:16/9;border-radius:.5rem;background:color-mix(in srgb,var(--mauve) 35%,var(--paper));display:grid;place-items:center;color:var(--muted);font-size:.9rem}
-/* Replace .thumb with: <img src="images/yourfile.jpg" alt="Describe it"> or a <video controls src="..."> */
+/* Replace .thumb with: <img loading="lazy" decoding="async" src="images/yourfile.jpg" alt="Describe it"> or a <video controls src="..."> */
 
 /* about + timeline */
 .cols{display:grid;gap:3rem;grid-template-columns:1fr}
@@ -118,7 +118,7 @@ dialog.case::backdrop{background:rgba(15,4,6,.65)}
 .case-inner{max-height:90vh;overflow-y:auto;padding:0 clamp(1.25rem,4vw,3rem) 3rem;scroll-behavior:smooth}
 .close{position:sticky;top:0;z-index:2;display:block;margin:0 0 0 auto;padding:1rem 0 .5rem;background:var(--paper);border:0;color:var(--ink);font:600 .95rem var(--body);cursor:pointer}
 body:has(dialog[open]){overflow:hidden}
-.case-title{margin:.25rem 0 1rem;font:400 clamp(4rem,11vw,7.5rem)/1 "Mrs Saint Delafield",cursive;letter-spacing:0}
+.case-title{margin:1.75rem 0 1rem;font:400 clamp(4rem,11vw,7.5rem)/1 "Mrs Saint Delafield",cursive;letter-spacing:0}
 .case .tag{margin:0;color:var(--muted)}
 .case .lead{font-size:1.2rem;max-width:42rem}
 .case h3{margin:2.5rem 0 .5rem;font:600 clamp(1.4rem,3vw,2rem) var(--display);letter-spacing:-.02em;scroll-margin-top:3.5rem}
@@ -178,6 +178,7 @@ body:has(dialog[open]){overflow:hidden}
 @media (prefers-reduced-motion:reduce){.hotspot{animation:none}}
 .screen.small{width:min(34rem,92vw)}
 .screen{max-height:92vh;overflow:auto}
+.case .links{margin:1rem 0 2rem}
 </style>
 </head>
 <body>
@@ -354,7 +355,7 @@ body:has(dialog[open]){overflow:hidden}
     </div>
 
     <h3 id="sp-wireframe">Wireframe</h3>
-    <!-- Add images: replace a grey box with <img src="images/wireframe-1.png" alt="Describe it">. Clicking an image opens it larger. -->
+    <!-- Add images: replace a grey box with <img loading="lazy" decoding="async" src="images/wireframe-1.png" alt="Describe it">. Clicking an image opens it larger. -->
     <div class="gallery">
       <div class="thumb">Image 1</div><div class="thumb">Image 2</div><div class="thumb">Image 3</div>
     </div>
@@ -364,17 +365,17 @@ body:has(dialog[open]){overflow:hidden}
       <!-- EDIT: paste your Figma prototype link -->
       <a href="https://www.figma.com/proto/YOUR-LINK" target="_blank" rel="noopener">Open interactive prototype</a>
     </div>
-    <!-- Replace each grey box with <img src="images/final-1.png" alt="Describe the screen">. Copy a box to add more. -->
+    <!-- Replace each grey box with <img loading="lazy" decoding="async" src="images/final-1.png" alt="Describe the screen">. Copy a box to add more. -->
     <div class="gallery">
-      <img src="images/Login.jpg" alt="ScholarPath login screen"><img src="images/Overview.jpg" alt="ScholarPath overview dashboard"><img src="images/Study%20Plan%20Setup.jpg" alt="ScholarPath study plan setup screen"><!-- Clickable screen. Each pink pulsing button is a hotspot placed over a button in the screenshot. data-screen names the window it opens (see the dialogs near the end of this file).
+      <img loading="lazy" decoding="async" src="images/Login.jpg" alt="ScholarPath login screen"><img loading="lazy" decoding="async" src="images/Overview.jpg" alt="ScholarPath overview dashboard"><img loading="lazy" decoding="async" src="images/Study%20Plan%20Setup.jpg" alt="ScholarPath study plan setup screen"><!-- Clickable screen. Each pink pulsing button is a hotspot placed over a button in the screenshot. data-screen names the window it opens (see the dialogs near the end of this file).
            left/top/width/height are percentages of the image, so each hotspot stays on its button at any size. To add another hotspot, copy a <button class="hotspot"> and change its numbers and data-screen. -->
       <figure class="shot">
-        <img src="images/Application%20Tracker.jpg" alt="ScholarPath application tracker screen">
+        <img loading="lazy" decoding="async" src="images/Application%20Tracker.jpg" alt="ScholarPath application tracker screen">
         <button type="button" class="hotspot" data-screen="screen-add" aria-label="Open the Add Application screen" style="left:64.3%;top:41.2%;width:11.6%;height:4.6%"><span class="tip" aria-hidden="true">Click to explore</span></button>
         <button type="button" class="hotspot" data-screen="screen-help" aria-label="Open the Need a hand? help window" style="left:79.9%;top:80%;width:16.1%;height:4.5%"></button>
         <button type="button" class="enlarge">⤢ Enlarge</button>
       </figure><figure class="shot">
-        <img src="images/Documents.jpg" alt="ScholarPath documents screen">
+        <img loading="lazy" decoding="async" src="images/Documents.jpg" alt="ScholarPath documents screen">
         <button type="button" class="hotspot" data-screen="screen-add-doc" aria-label="Open the Add Document screen" style="left:64.3%;top:41.2%;width:11.6%;height:4.6%"><span class="tip" aria-hidden="true">Click to explore</span></button>
         <button type="button" class="hotspot" data-screen="screen-checklist" aria-label="Open the Document Checklist screen" style="left:79.6%;top:64.2%;width:9%;height:2.8%"></button>
         <button type="button" class="hotspot" data-screen="screen-help" aria-label="Open the Need a hand? help window" style="left:79.9%;top:85.8%;width:16.1%;height:4.4%"></button>
@@ -437,19 +438,19 @@ body:has(dialog[open]){overflow:hidden}
 </dialog>
 <dialog class="screen" id="screen-add" aria-label="Add Application screen">
   <div class="bar"><span>Add Application</span><button type="button" class="x" data-close>Close ✕</button></div>
-  <img src="images/Add%20Application.jpg" alt="ScholarPath add application screen">
+  <img loading="lazy" decoding="async" src="images/Add%20Application.jpg" alt="ScholarPath add application screen">
 </dialog>
 <dialog class="screen small" id="screen-help" aria-label="Need a hand? screen">
   <div class="bar"><span>Help window</span><button type="button" class="x" data-close>Close ✕</button></div>
-  <img src="images/Need%20Help.jpg" alt="ScholarPath help window: Need a hand?">
+  <img loading="lazy" decoding="async" src="images/Need%20Help.jpg" alt="ScholarPath help window: Need a hand?">
 </dialog>
 <dialog class="screen" id="screen-add-doc" aria-label="Add Document screen">
   <div class="bar"><span>Add Document</span><button type="button" class="x" data-close>Close ✕</button></div>
-  <img src="images/Add%20Document.jpg" alt="ScholarPath add document screen">
+  <img loading="lazy" decoding="async" src="images/Add%20Document.jpg" alt="ScholarPath add document screen">
 </dialog>
 <dialog class="screen" id="screen-checklist" aria-label="Document Checklist screen">
   <div class="bar"><span>Document Checklist</span><button type="button" class="x" data-close>Close ✕</button></div>
-  <img src="images/Document%20Checklist.jpg" alt="ScholarPath document checklist screen">
+  <img loading="lazy" decoding="async" src="images/Document%20Checklist.jpg" alt="ScholarPath document checklist screen">
 </dialog>
 <script>
 document.querySelectorAll('[data-dialog]').forEach(function(b){
